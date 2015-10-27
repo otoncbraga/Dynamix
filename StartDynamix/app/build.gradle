@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "app.dynamix.com.br.startdynamix"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:design:22.2.1'
+    compile files('libs/org.ambientdynamix.contextplugins.barcode_1.0.0-datatypes.jar')
+    compile files('libs/org.ambientdynamix.contextplugins.nfc_1.0.0-datatypes.jar')
+    compile files('libs/org.ambientdynamix.contextplugins.pedometer_1.0.0-datatypes.jar')
+    compile files('libs/org.ambientdynamix.contextplugins.sampleplugin_1.0.0-datatypes.jar')
+    compile files('libs/org.ambientdynamix.application.api_v0.9.61.jar')
+    compile files('libs/org.ambientdynamix.contextplugins.ambientsound_1.0.0-datatypes.jar')
+}
